@@ -5,7 +5,7 @@
     name: "{{ name }}"
     gid: "{{ users[name].guid }}"
     state: present
-  loop: "{{ users.keys() }}"
+  loop: "{{ users.keys() | list }}"
   loop_control:
     loop_var: name
   
@@ -17,7 +17,7 @@
     groups: "{{ users[name].groups }}"
     state: present
     remove: "yes"
-  loop: "{{ users.keys() }}"
+  loop: "{{ users.keys() | list }}"
   loop_control:
     loop_var: name
   

@@ -7,7 +7,7 @@
       include_tasks: create-users.yml
       vars:
         users: "{{ projects[item].users }}"
-      loop: "{{ projects.keys() }}"
+      loop: "{{ projects.keys() | list }}"
 
     - name: create demo user user/groups
       include_tasks: create-users.yml
@@ -23,7 +23,7 @@
       include_tasks: create-users.yml
       vars:
         users: "{{ projects[item].users }}"
-      loop: "{{ projects.keys() }}"
+      loop: "{{ projects.keys() | list }}"
 
     - name: create demo user user/groups
       include_tasks: create-users.yml

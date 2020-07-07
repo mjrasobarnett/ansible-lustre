@@ -34,7 +34,7 @@
       include_tasks: create-users.yml
       vars:
         users: "{{ projects[item].users }}"
-      loop: "{{ projects.keys() }}"
+      loop: "{{ projects.keys() | list }}"
 
     - name: create project directories in lustre fs
       file:
